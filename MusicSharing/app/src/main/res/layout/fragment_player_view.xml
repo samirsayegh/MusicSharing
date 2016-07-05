@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:orientation="vertical"
-        android:background="#444"
+        android:background="@color/colorPrimaryDark"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp">
@@ -17,14 +17,15 @@
             android:layout_height="wrap_content"
             android:id="@+id/fragment_player_view_song_question_tv"
             android:textSize="20sp"
+            android:layout_margin="10dip"
             tools:text="What do you think about this song?"
             android:textColor="@android:color/white"/>
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_centerInParent="true"
-            android:src="@drawable/ic_launcher"
+            android:src="@drawable/ic_play_circle_outline_white_48dp"
             android:id="@+id/fragment_player_view_song_play_iv" />
 
         <LinearLayout
@@ -32,7 +33,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="5dip"
+            android:layout_marginBottom="20dip"
             android:layout_marginLeft="10dip"
             android:layout_marginRight="10dip">
 
@@ -57,7 +58,9 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingTop="15dip"
+        android:paddingBottom="15dip">
 
         <ImageView
             android:layout_width="0dp"

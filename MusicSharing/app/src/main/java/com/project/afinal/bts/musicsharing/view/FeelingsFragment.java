@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.project.afinal.bts.musicsharing.NavigationManager;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 public class FeelingsFragment extends BaseFragment {
 
     private String[] FEELINGS = {"Happy", "Sad", "Active", "Exhausted"};
+    private TextView title;
     private GridView feelingsGrid;
     private Button next;
 
@@ -28,6 +30,7 @@ public class FeelingsFragment extends BaseFragment {
 
     @Override
     protected void loadViewItems() {
+        title = (TextView) rootView.findViewById(R.id.fragment_feelings_title_tv);
         feelingsGrid = (GridView) rootView.findViewById(R.id.fragment_feelings_gv);
         next = (Button) rootView.findViewById(R.id.fragment_feelings_next_b);
         next.setOnClickListener(new View.OnClickListener() {
@@ -40,15 +43,34 @@ public class FeelingsFragment extends BaseFragment {
 
     @Override
     protected void loadValues() {
+        title.setText("Today I feel like...");
+        next.setText("Next");
+
         ArrayList<FeelingsItem> items = new ArrayList<>();
 
         FeelingsItem item;
-        for (int i = 0; i < FEELINGS.length; i++) {
-            item = new FeelingsItem();
-            item.setIconResource(R.drawable.ic_launcher);
-            item.setTitle(FEELINGS[i]);
-            items.add(item);
-        }
+
+
+        FeelingsItem item1 = new FeelingsItem();
+        item1.setIconResource(R.drawable.joy);
+        item1.setTitle(FEELINGS[0]);
+        items.add(item1);
+
+        FeelingsItem item2 = new FeelingsItem();
+        item2.setIconResource(R.drawable.sad);
+        item2.setTitle(FEELINGS[1]);
+        items.add(item2);
+
+        FeelingsItem item3 = new FeelingsItem();
+        item3.setIconResource(R.drawable.active);
+        item3.setTitle(FEELINGS[2]);
+        items.add(item3);
+
+        FeelingsItem item4 = new FeelingsItem();
+        item4.setIconResource(R.drawable.exhausted);
+        item4.setTitle(FEELINGS[3]);
+        items.add(item4);
+
 
         FeelingsContentAdapter adapter = new FeelingsContentAdapter(items);
         feelingsGrid.setAdapter(adapter);
