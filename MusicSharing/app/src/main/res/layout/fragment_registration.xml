@@ -9,19 +9,21 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Sign Up For Free"
+        android:textStyle="bold"
         android:id="@+id/textView"
         android:layout_weight="0.06"
         android:layout_marginTop="40dp"
-        android:textAlignment="center"
-        android:textSize="30dp" />
+        android:textAlignment="center" />
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
         android:layout_height="wrap_content"
         android:id="@+id/viewRegistrationName"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.05"
-        android:layout_marginTop="40dp">
+        android:layout_marginTop="20dp">
 
         <android.support.v7.widget.AppCompatEditText
             android:layout_width="match_parent"
@@ -34,6 +36,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
+        android:layout_marginTop="5dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
         android:layout_height="wrap_content"
         android:id="@+id/viewRegistrationEmail"
         android:layout_gravity="center_horizontal"
@@ -49,6 +54,9 @@
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
+        android:layout_marginTop="5dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/viewRegistrationPassword"
@@ -71,7 +79,9 @@
         android:id="@+id/buttonRegistrationNext"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.04"
-        android:layout_marginTop="30dp" />
-
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:backgroundTint="@color/colorAccent"/>
 
 </LinearLayout>

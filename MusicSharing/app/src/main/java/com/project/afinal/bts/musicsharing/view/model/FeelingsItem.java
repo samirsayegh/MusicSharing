@@ -1,4 +1,4 @@
-package com.project.afinal.bts.musicsharing.view;
+package com.project.afinal.bts.musicsharing.view.model;
 
 /**
  * Created by verologu on 04/07/16.
