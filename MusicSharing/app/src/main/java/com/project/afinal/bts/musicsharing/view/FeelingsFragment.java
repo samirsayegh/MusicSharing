@@ -36,7 +36,7 @@ public class FeelingsFragment extends BaseFragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavigationManager.navigate(getActivity(), new PlayerFragment(), true);
+                NavigationManager.navigate(getActivity(), new MusicGenreFragment(), true);
             }
         });
     }
