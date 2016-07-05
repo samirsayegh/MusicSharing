@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">MusicSharing</string>
+    <string name="i_m">I´m</string>
+    <string name="at">At</string>
+    <string name="next">Next</string>
+
+    <string-array name="where">
+        <item>university</item>
+        <item>metro</item>
+        <item>home</item>
+    </string-array>
+
+    <string-array name="with">
+        <item>alone</item>
+        <item>with a friend</item>
+        <item>with many friends</item>
+    </string-array>
 </resources>

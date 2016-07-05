@@ -45,7 +45,7 @@ public class FeelingsFragment extends BaseFragment {
         FeelingsItem item;
         for (int i = 0; i < FEELINGS.length; i++) {
             item = new FeelingsItem();
-            item.setIconResource(R.mipmap.ic_launcher);
+            item.setIconResource(R.drawable.ic_launcher);
             item.setTitle(FEELINGS[i]);
             items.add(item);
         }
