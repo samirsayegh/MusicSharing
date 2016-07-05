@@ -13,6 +13,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        NavigationManager.navigate(this, new PersonalInfoFragment(), false);
+        NavigationManager.navigate(this, new LoginFragment(), false);
     }
 }
