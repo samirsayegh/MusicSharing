@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView android:id="@+id/fragment_feelings_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="10dip"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        tools:text="Today I feel like..."/>
+
     <GridView
-        android:layout_marginTop="10dp"
         android:id="@+id/fragment_feelings_gv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:numColumns="auto_fit"
-        android:stretchMode="columnWidth"/>
+        android:stretchMode="columnWidth"
+        android:layout_margin="10dip"/>
 
     <Button android:layout_width="match_parent"
+        android:layout_margin="10dip"
         android:layout_height="wrap_content"
         android:id="@+id/fragment_feelings_next_b"
-        android:text="Next" />
+        tools:text="Next"
+        android:backgroundTint="@color/colorAccent"/>
 
 </LinearLayout>
