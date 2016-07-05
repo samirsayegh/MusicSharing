@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <RelativeLayout
@@ -15,7 +17,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/fragment_player_view_song_question_tv"
             android:textSize="20sp"
-            android:text="What do you think about this song?"
+            tools:text="What do you think about this song?"
             android:textColor="@android:color/white"/>
 
         <ImageView
@@ -38,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/fragment_player_view_song_artist_song_tv"
-                android:text="What a song!"
+                tools:text="What a song!"
                 android:textColor="@android:color/white"
                 android:textSize="16sp"/>
 
@@ -46,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/fragment_player_view_song_artist_name_tv"
-                android:text="John Doe"
+                tools:text="John Doe"
                 android:textColor="@android:color/white"
                 android:textSize="14sp"/>
         </LinearLayout>
