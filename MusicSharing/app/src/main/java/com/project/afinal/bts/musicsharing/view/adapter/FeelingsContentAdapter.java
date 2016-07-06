@@ -1,4 +1,4 @@
-package com.project.afinal.bts.musicsharing.view;
+package com.project.afinal.bts.musicsharing.view.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.project.afinal.bts.musicsharing.R;
+import com.project.afinal.bts.musicsharing.view.model.FeelingsItem;
 
 import java.util.List;
 
@@ -49,11 +50,6 @@ public class FeelingsContentAdapter extends BaseAdapter {
         ImageView icon = (ImageView) convertView.findViewById(R.id.item_feelings_icon_iv);
         if (icon != null) {
             icon.setImageResource(items.get(position).getIconResource());
-        }
-
-        TextView title = (TextView) convertView.findViewById(R.id.item_feelings_title_tv);
-        if (title != null) {
-            title.setText(items.get(position).getTitle());
         }
 
         return convertView;

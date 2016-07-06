@@ -3,9 +3,7 @@ package com.project.afinal.bts.musicsharing.view;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.SimpleAdapter;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 
 import com.project.afinal.bts.musicsharing.NavigationManager;
 import com.project.afinal.bts.musicsharing.R;
@@ -22,7 +20,7 @@ public class PersonalInfoFragment extends BaseFragment {
     private Button buttonNext;
 
     public PersonalInfoFragment() {
-        layoutId = R.layout.fragment_personal_info;
+        layoutId = R.layout.fragment_personal_info_view;
     }
 
     @Override
