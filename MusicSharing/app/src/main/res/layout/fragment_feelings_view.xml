@@ -3,13 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFF3E0">
 
     <TextView android:id="@+id/fragment_feelings_title_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:layout_marginTop="10dip"
+        android:layout_marginTop="30dip"
         android:gravity="center_horizontal"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textStyle="bold"
@@ -21,10 +22,14 @@
         android:layout_height="wrap_content"
         android:numColumns="auto_fit"
         android:stretchMode="columnWidth"
-        android:layout_margin="10dip"/>
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="20dip"/>
 
     <Button android:layout_width="match_parent"
-        android:layout_margin="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="20dip"
         android:layout_height="wrap_content"
         android:id="@+id/fragment_feelings_next_b"
         tools:text="Next"

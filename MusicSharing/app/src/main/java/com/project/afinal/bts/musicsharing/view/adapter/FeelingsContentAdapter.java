@@ -52,11 +52,6 @@ public class FeelingsContentAdapter extends BaseAdapter {
             icon.setImageResource(items.get(position).getIconResource());
         }
 
-        TextView title = (TextView) convertView.findViewById(R.id.item_feelings_title_tv);
-        if (title != null) {
-            title.setText(items.get(position).getTitle());
-        }
-
         return convertView;
     }
 }

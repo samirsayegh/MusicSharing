@@ -8,6 +8,8 @@
         android:layout_height="60dip"
         android:id="@+id/item_music_genre_name_tv"
         android:gravity="center"
-        android:background="@drawable/ripple_shape_circle" />
+        android:textStyle="bold"
+        android:padding="5dip"
+        android:background="@drawable/shape_circle" />
 
 </LinearLayout>

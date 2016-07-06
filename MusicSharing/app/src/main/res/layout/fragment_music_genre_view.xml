@@ -3,19 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#FFF3E0">
 
     <TextView android:id="@+id/fragment_music_genre_title_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_marginTop="10dip"
+        android:layout_marginTop="30dip"
         android:gravity="center_horizontal"
         android:textStyle="bold"
         tools:text="Today I feel like..."/>
 
     <LinearLayout
+        android:layout_marginTop="20dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
         android:id="@+id/fragment_music_genres_ll"
         android:layout_width="match_parent"
         android:gravity="center_horizontal"
@@ -28,6 +32,9 @@
         android:id="@+id/fragment_music_genre_next_b"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginRight="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="20dip"
         android:backgroundTint="@color/colorAccent"
         tools:text="Next" />
 

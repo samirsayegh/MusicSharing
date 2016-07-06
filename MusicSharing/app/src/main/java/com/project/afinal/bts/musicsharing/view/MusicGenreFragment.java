@@ -1,6 +1,10 @@
 package com.project.afinal.bts.musicsharing.view;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.RippleDrawable;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.util.TypedValue;
@@ -19,6 +23,7 @@ import com.project.afinal.bts.musicsharing.view.model.GenreItem;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by veronica.lopez on 05/07/2016.
@@ -27,7 +32,7 @@ public class MusicGenreFragment extends BaseFragment {
 
     private String[] GENRES = {"Pop", "(H)ip (H)op", "Indie", "Dance", "House"};
     private float[] TEXT_SIZES = {13, 16, 20, 14, 24};
-    private int[] SIZES = {96, 80, 120, 73, 186};
+    private int[] SIZES = {98, 80, 120, 73, 186};
 
     private TextView title;
     private LinearLayout musicGenres;
@@ -140,6 +145,18 @@ public class MusicGenreFragment extends BaseFragment {
             title.setLayoutParams(params);
             title.setText(genreItem.getName());
             title.setTextSize(genreItem.getTextSize());
+
+            Random rnd = new Random();
+            int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+
+            /*
+            RippleDrawable bgShape = (RippleDrawable) title.getBackground();
+            bgShape.setColor(ColorStateList.valueOf(color));
+            title.setBackground(bgShape);
+            */
+
+            GradientDrawable shape = (GradientDrawable) title.getBackground();
+            shape.setColor(color);
         }
 
         return view;
