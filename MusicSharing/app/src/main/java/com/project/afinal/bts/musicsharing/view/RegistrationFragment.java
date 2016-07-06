@@ -18,7 +18,7 @@ public class RegistrationFragment extends BaseFragment {
     private Button buttonRegistrationNext;
 
     public RegistrationFragment() {
-        layoutId = R.layout.fragment_registration;
+        layoutId = R.layout.fragment_register_view;
     }
 
     @Override
