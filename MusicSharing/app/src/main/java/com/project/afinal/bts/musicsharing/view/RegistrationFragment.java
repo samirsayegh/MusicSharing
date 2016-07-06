@@ -26,6 +26,7 @@ public class RegistrationFragment extends BaseFragment {
         editTextRegistrationName = (AppCompatEditText) rootView.findViewById(R.id.editTextRegistrationName);
         editTextRegistrationEmail = (AppCompatEditText) rootView.findViewById(R.id.editTextRegistrationEmail);
         editTextRegistrationPassword = (AppCompatEditText) rootView.findViewById(R.id.editTextRegistrationPassword);
+
         buttonRegistrationNext = (Button) rootView.findViewById(R.id.buttonRegistrationNext);
         buttonRegistrationNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,5 +34,14 @@ public class RegistrationFragment extends BaseFragment {
                 NavigationManager.navigate(getActivity(), new PersonalInfoFragment(), true);
             }
         });
+    }
+
+    @Override
+    protected void loadValues() {
+        editTextRegistrationEmail.setText("gabriella@gmail.com");
+        editTextRegistrationName.setText("Gabriella");
+        editTextRegistrationPassword.setText("gabriella");
+
+        buttonRegistrationNext.setText("Next");
     }
 }

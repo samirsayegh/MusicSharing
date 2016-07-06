@@ -1,12 +1,14 @@
 package com.project.afinal.bts.musicsharing.view;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.RippleDrawable;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AlertDialog;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -15,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.project.afinal.bts.musicsharing.NavigationManager;
 import com.project.afinal.bts.musicsharing.R;
@@ -38,6 +41,8 @@ public class MusicGenreFragment extends BaseFragment {
     private LinearLayout musicGenres;
     private Button next;
 
+    private List<GenreItem> genres;
+
     public MusicGenreFragment() {
         layoutId = R.layout.fragment_music_genre_view;
     }
@@ -51,9 +56,22 @@ public class MusicGenreFragment extends BaseFragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavigationManager.navigate(getActivity(), new PlayerFragment(), true);
+                showRegitrationDialog();
             }
         });
+    }
+
+    private void showRegitrationDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage("Your registration was done successfully :)")
+                .setPositiveButton("Let's go!", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        NavigationManager.navigate(getActivity(), new PlayerFragment(), true);
+                    }
+                });
+        // Create the AlertDialog object and return it
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
     @Override
@@ -61,39 +79,39 @@ public class MusicGenreFragment extends BaseFragment {
         title.setText("I like to hear...");
         next.setText("Next");
 
-        final ArrayList<GenreItem> items = new ArrayList<>();
+        genres = new ArrayList<>();
 
         GenreItem item1 = new GenreItem();
         item1.setTextSize(TEXT_SIZES[0]);
         item1.setName(GENRES[0]);
         item1.setSize(SIZES[0]);
-        items.add(item1);
+        genres.add(item1);
 
         GenreItem item2 = new GenreItem();
         item2.setTextSize(TEXT_SIZES[1]);
         item2.setName(GENRES[1]);
         item2.setSize(SIZES[1]);
-        items.add(item2);
+        genres.add(item2);
 
         GenreItem item3 = new GenreItem();
         item3.setTextSize(TEXT_SIZES[2]);
         item3.setName(GENRES[2]);
         item3.setSize(SIZES[2]);
-        items.add(item3);
+        genres.add(item3);
 
         GenreItem item4 = new GenreItem();
         item4.setTextSize(TEXT_SIZES[3]);
         item4.setName(GENRES[3]);
         item4.setSize(SIZES[3]);
-        items.add(item4);
+        genres.add(item4);
 
         GenreItem item5 = new GenreItem();
         item5.setTextSize(TEXT_SIZES[4]);
         item5.setName(GENRES[4]);
         item5.setSize(SIZES[4]);
-        items.add(item5);
+        genres.add(item5);
 
-        createViews(items);
+        createViews(genres);
     }
 
     private void createViews(List<GenreItem> items) {
@@ -107,7 +125,7 @@ public class MusicGenreFragment extends BaseFragment {
                 if (genrePosition == GENRES.length) {
                     break;
                 }
-                genre = createGenreView(items, genrePosition, context);
+                genre = createGenreView(genrePosition, context);
                 horizontalContainer.addView(genre);
                 genrePosition++;
             }
@@ -125,7 +143,7 @@ public class MusicGenreFragment extends BaseFragment {
         return horizontalContainer;
     }
 
-    private View createGenreView(List<GenreItem> items, int i, FragmentActivity context) {
+    private View createGenreView(int position, FragmentActivity context) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.item_music_genre, null);
 
@@ -135,10 +153,11 @@ public class MusicGenreFragment extends BaseFragment {
                 .WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         viewParams.setMargins(margins, margins, margins, margins);
         view.setLayoutParams(viewParams);
+        view.setTag(position);
 
         TextView title = (TextView) view.findViewById(R.id.item_music_genre_name_tv);
         if (title != null) {
-            GenreItem genreItem = items.get(i);
+            GenreItem genreItem = genres.get(position);
             int size = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, genreItem.getSize(),
                     getResources().getDisplayMetrics());
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(size, size);
@@ -158,6 +177,15 @@ public class MusicGenreFragment extends BaseFragment {
             GradientDrawable shape = (GradientDrawable) title.getBackground();
             shape.setColor(color);
         }
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = (int) v.getTag();
+                GenreItem genreItem = genres.get(position);
+                Toast.makeText(getActivity(), genreItem.getName(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return view;
     }
