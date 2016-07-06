@@ -2,8 +2,6 @@ package com.project.afinal.bts.musicsharing.view;
 
 import android.view.View;
 import android.widget.Button;
-import android.widget.GridView;
-import android.widget.TextView;
 
 import com.project.afinal.bts.musicsharing.NavigationManager;
 import com.project.afinal.bts.musicsharing.R;
@@ -17,7 +15,7 @@ public class LoginFragment extends BaseFragment {
     private Button buttonLoginDiscover;
 
     public LoginFragment(){
-        layoutId = R.layout.fragment_login;
+        layoutId = R.layout.fragment_login_view;
     }
     @Override
     protected void loadViewItems() {
