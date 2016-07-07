@@ -4,17 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFF3E0">
+    android:background="@android:color/white">
 
     <TextView android:id="@+id/fragment_music_genre_title_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="35sp"
         android:layout_marginTop="30dip"
         android:gravity="center_horizontal"
         android:textStyle="bold"
-        tools:text="Today I feel like..."/>
+        tools:text="Choose genres you like"/>
 
     <LinearLayout
         android:layout_marginTop="20dip"
@@ -28,14 +28,18 @@
 
     </LinearLayout>
 
-    <Button
+    <TextView
         android:id="@+id/fragment_music_genre_next_b"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dip"
-        android:layout_marginLeft="10dip"
-        android:layout_marginTop="20dip"
-        android:backgroundTint="@color/colorAccent"
+        android:layout_marginRight="20dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginTop="15dip"
+        android:textSize="20sp"
+        android:padding="15dip"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:background="@color/colorAccent"
         tools:text="Next" />
 
 </LinearLayout>

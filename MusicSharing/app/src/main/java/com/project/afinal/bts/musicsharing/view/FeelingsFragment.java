@@ -23,7 +23,7 @@ public class FeelingsFragment extends BaseFragment {
     private String[] FEELINGS = {"Happy", "Sad", "Active", "Exhausted"};
     private TextView title;
     private GridView feelingsGrid;
-    private Button next;
+    private TextView next;
 
     public FeelingsFragment() {
         layoutId = R.layout.fragment_feelings_view;
@@ -33,7 +33,7 @@ public class FeelingsFragment extends BaseFragment {
     protected void loadViewItems() {
         title = (TextView) rootView.findViewById(R.id.fragment_feelings_title_tv);
         feelingsGrid = (GridView) rootView.findViewById(R.id.fragment_feelings_gv);
-        next = (Button) rootView.findViewById(R.id.fragment_feelings_next_b);
+        next = (TextView) rootView.findViewById(R.id.fragment_feelings_next_b);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
