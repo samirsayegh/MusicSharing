@@ -1,6 +1,5 @@
 package com.project.afinal.bts.musicsharing.view;
 
-import android.app.Activity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -10,7 +9,9 @@ import android.widget.Toast;
 
 import com.project.afinal.bts.musicsharing.NavigationManager;
 import com.project.afinal.bts.musicsharing.R;
+import com.project.afinal.bts.musicsharing.view.adapter.FeelingsContentAdapter;
 import com.project.afinal.bts.musicsharing.view.base.BaseFragment;
+import com.project.afinal.bts.musicsharing.view.model.FeelingsItem;
 
 import java.util.ArrayList;
 
@@ -22,7 +23,7 @@ public class FeelingsFragment extends BaseFragment {
     private String[] FEELINGS = {"Happy", "Sad", "Active", "Exhausted"};
     private TextView title;
     private GridView feelingsGrid;
-    private Button next;
+    private TextView next;
 
     public FeelingsFragment() {
         layoutId = R.layout.fragment_feelings_view;
@@ -32,11 +33,11 @@ public class FeelingsFragment extends BaseFragment {
     protected void loadViewItems() {
         title = (TextView) rootView.findViewById(R.id.fragment_feelings_title_tv);
         feelingsGrid = (GridView) rootView.findViewById(R.id.fragment_feelings_gv);
-        next = (Button) rootView.findViewById(R.id.fragment_feelings_next_b);
+        next = (TextView) rootView.findViewById(R.id.fragment_feelings_next_b);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavigationManager.navigate(getActivity(), new PlayerFragment(), true);
+                NavigationManager.navigate(getActivity(), new MusicGenreFragment(), true);
             }
         });
     }
@@ -46,10 +47,7 @@ public class FeelingsFragment extends BaseFragment {
         title.setText("Today I feel like...");
         next.setText("Next");
 
-        ArrayList<FeelingsItem> items = new ArrayList<>();
-
-        FeelingsItem item;
-
+        final ArrayList<FeelingsItem> items = new ArrayList<>();
 
         FeelingsItem item1 = new FeelingsItem();
         item1.setIconResource(R.drawable.joy);
@@ -71,14 +69,15 @@ public class FeelingsFragment extends BaseFragment {
         item4.setTitle(FEELINGS[3]);
         items.add(item4);
 
-
         FeelingsContentAdapter adapter = new FeelingsContentAdapter(items);
         feelingsGrid.setAdapter(adapter);
         feelingsGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity().getApplication().getApplicationContext(), ""
-                        + position, Toast.LENGTH_SHORT).show();
+                FeelingsItem feelingsItem = items.get(position);
+
+                Toast.makeText(getActivity().getApplication().getApplicationContext(),
+                        feelingsItem.getTitle(), Toast.LENGTH_SHORT).show();
             }
         });
     }

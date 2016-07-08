@@ -1,5 +1,6 @@
 package com.project.afinal.bts.musicsharing.view;
 
+import android.view.View;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -40,6 +41,20 @@ public class PlayerFragment extends BaseFragment {
         songArtist.setText("John Doe");
 
         playerIcon.setImageResource(R.drawable.ic_play_circle_outline_white_48dp);
+        playerIcon.setTag("play");
+        playerIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String status = (String) v.getTag();
+                if ("play".equals(status)) {
+                    playerIcon.setImageResource(R.drawable.ic_pause_circle_outline_white_48dp);
+                    playerIcon.setTag("pause");
+                } else {
+                    playerIcon.setImageResource(R.drawable.ic_play_circle_outline_white_48dp);
+                    playerIcon.setTag("play");
+                }
+            }
+        });
         playerDislike.setImageResource(R.drawable.dislike);
         playerLike.setImageResource(R.drawable.like);
     }
