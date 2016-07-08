@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.project.afinal.bts.musicsharing.NavigationManager;
 import com.project.afinal.bts.musicsharing.R;
@@ -17,7 +18,7 @@ public class PersonalInfoFragment extends BaseFragment {
 
     private Spinner spinnerWhere;
     private Spinner spinnerWith;
-    private Button buttonNext;
+    private TextView buttonNext;
 
     public PersonalInfoFragment() {
         layoutId = R.layout.fragment_personal_info_view;
@@ -27,7 +28,7 @@ public class PersonalInfoFragment extends BaseFragment {
     protected void loadViewItems() {
         spinnerWhere = (Spinner) rootView.findViewById(R.id.spinnerPersonalInfoAt);
         spinnerWith = (Spinner) rootView.findViewById(R.id.spinnerPersonalInfoIAm);
-        buttonNext = (Button) rootView.findViewById(R.id.buttonPersonalInfoAt);
+        buttonNext = (TextView) rootView.findViewById(R.id.buttonPersonalInfoAt);
         ArrayAdapter<CharSequence> adapterWhere = ArrayAdapter.createFromResource(getContext(),
                 R.array.where, android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> adapterWith = ArrayAdapter.createFromResource(getContext(),

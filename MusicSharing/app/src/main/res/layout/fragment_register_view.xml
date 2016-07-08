@@ -2,17 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF3E0">
+    android:background="@drawable/background">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="35sp"
         android:text="Sign Up For Free"
         android:textStyle="bold"
         android:id="@+id/textView"
-        android:layout_marginTop="40dp"
-        android:textAlignment="center" />
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/primary_text_dark"/>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -21,6 +22,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/viewRegistrationName"
         android:layout_gravity="center_horizontal"
+        android:textColorHint="@android:color/white"
         android:layout_marginTop="20dp">
 
         <android.support.v7.widget.AppCompatEditText
@@ -28,6 +30,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/editTextRegistrationName"
             android:hint="Name"
+            android:textColorHint="@android:color/white"
             android:nextFocusDown="@+id/editTextRegistrationEmail"/>
     </android.support.design.widget.TextInputLayout>
 
@@ -39,6 +42,7 @@
         android:layout_marginRight="10dip"
         android:layout_height="wrap_content"
         android:id="@+id/viewRegistrationEmail"
+        android:textColorHint="@android:color/white"
         android:layout_gravity="center_horizontal" >
 
         <android.support.v7.widget.AppCompatEditText
@@ -46,6 +50,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/editTextRegistrationEmail"
             android:hint="Email"
+            android:textColorHint="@android:color/white"
             android:nextFocusDown="@+id/editTextRegistrationPassword"
             android:inputType="textEmailAddress"/>
     </android.support.design.widget.TextInputLayout>
@@ -57,6 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/viewRegistrationPassword"
+        android:textColorHint="@android:color/white"
         android:layout_gravity="center_horizontal" >
 
         <android.support.v7.widget.AppCompatEditText
@@ -64,19 +70,24 @@
             android:layout_height="wrap_content"
             android:id="@+id/editTextRegistrationPassword"
             android:hint="Password"
+            android:textColorHint="@android:color/white"
             android:nextFocusDown="@+id/buttonRegistrationNext"
             android:inputType="textPassword"/>
     </android.support.design.widget.TextInputLayout>
 
-    <Button
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Get started"
         android:id="@+id/buttonRegistrationNext"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="10dip"
-        android:layout_marginRight="10dip"
-        android:backgroundTint="@color/colorAccent"/>
+        android:layout_marginTop="60dp"
+        android:padding="15sp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:background="@color/colorAccent"/>
 
 </LinearLayout>

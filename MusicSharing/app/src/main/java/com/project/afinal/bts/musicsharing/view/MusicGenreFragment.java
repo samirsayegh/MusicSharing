@@ -35,11 +35,11 @@ public class MusicGenreFragment extends BaseFragment {
 
     private String[] GENRES = {"Pop", "(H)ip (H)op", "Indie", "Dance", "House"};
     private float[] TEXT_SIZES = {13, 16, 20, 14, 24};
-    private int[] SIZES = {98, 80, 120, 73, 186};
+    private int[] SIZES = {80, 80, 80, 80, 80};
 
     private TextView title;
     private LinearLayout musicGenres;
-    private Button next;
+    private TextView next;
 
     private List<GenreItem> genres;
 
@@ -52,7 +52,7 @@ public class MusicGenreFragment extends BaseFragment {
         title = (TextView) rootView.findViewById(R.id.fragment_music_genre_title_tv);
         musicGenres = (LinearLayout) rootView.findViewById(R.id.fragment_music_genres_ll);
 
-        next = (Button) rootView.findViewById(R.id.fragment_music_genre_next_b);
+        next = (TextView) rootView.findViewById(R.id.fragment_music_genre_next_b);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
